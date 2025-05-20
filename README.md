@@ -2,7 +2,7 @@
 ---
 title: "Welcome to my blog"
 date: 2025-04-30
-Description: Trying to make this work
+Description: Primer edición de este blog
 ---
 ```
 
@@ -19,8 +19,8 @@ For more information about configuring front matter, see the [Jekyll frontmatter
 1. Type the following content at the top of your blog post:
    ```yaml
    ---
-   title: "YOUR-TITLE"
-   date: YYYY-MM-DD
+   title: "Edición de este blog"
+   date: 2025-05-20
    ---
    ```
 
