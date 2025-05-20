@@ -5,9 +5,9 @@
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-## Finish
+## Esto es un cambio
 
-_Congratulations friend, you've completed this course!_
+_Congratulations Amigo, you've completed this course!_
 
 <img src=https://octodex.github.com/images/constructocat2.jpg alt=celebrate width=300 align=right>
 
