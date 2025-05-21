@@ -10,9 +10,9 @@ despues de desactivar acciones
 
 _Congratulations Amigo, you've completed this course!_
 
-![image alt](./Assets/image01.jpg)
 
-.<img src=https://octodex.github.com/images/constructocat2.jpg alt=celebrate width=300 align=right>
+
+![Alt text][https://github.com/Soberanostudioweb/sobstudio/issues/5#issue-3081569003)
 
 Your blog is now live and has been deployed!
 
