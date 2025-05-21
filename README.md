@@ -10,7 +10,7 @@ despues de desactivar acciones
 
 _Congratulations Amigo, you've completed this course!_
 
-![image alt](https://github.com/Soberanostudioweb/sobstudio/blob/dbf1c619ff085c6a7d23952958542910139a869f/.github/images/pexels-julian-dahl-2149417377-31049334.jpg)
+![image alt](https://github.com/Soberanostudioweb/sobstudio/blob/e6bec7fa621baed3021a68690327f05d7c2cb0ad/.github/Assets/pexels-julian-dahl-2149417377-31049334.JPG)
 
 <.img src=https://octodex.github.com/images/constructocat2.jpg alt=celebrate width=300 align=right>
 
