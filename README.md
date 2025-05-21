@@ -5,31 +5,28 @@
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-## Esto es un cambio tercer intento
-despues de desactivar acciones
-
-_Congratulations Amigo, you've completed this course!_
+### Pagina de Soberano Studio
 
 
+Tecnologia Astro
+Pipeline: Github
 
-![Alt text][https://github.com/Soberanostudioweb/sobstudio/issues/5#issue-3081569003)
+Tareas:
+1. Index
+2. CSS
+3. Template
+4. Images
+5. Descriptions
+6. Story
+7. About
+8. Panel
+9. Contact
 
-Your blog is now live and has been deployed!
 
-Here's a recap of all the tasks you've accomplished in your repository:
 
-- You enabled GitHub Pages.
-- You selected a theme using the config file.
-- You learned about proper directory format and file naming conventions in Jekyll.
-- You created your first blog post with Jekyll!
+### Agile Method?
+Muchas dependencies? tratar a faster approach now
 
-### What's next?
-
-- Keep working on your GitHub Pages site... we love seeing what you come up with!
-- We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages).
-- [Take another GitHub Skills course](https://github.com/skills).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 <footer>
 
@@ -40,8 +37,6 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+Para más info contactar a Mauricio
 
 </footer>
