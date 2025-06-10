@@ -197,22 +197,82 @@
             visibility: visible;
         }
 
-        /* Responsive */
+        /* Image Grid Styles */
+        .image-grid-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .image-frame {
+            aspect-ratio: 1;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+            position: relative;
+        }
+
+        .placeholder-text {
+            color: #999;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* When images are added */
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive Design for Image Grid */
         @media (max-width: 768px) {
-            .promo-banner {
-                position: static;
-                transform: none;
-                margin: 0 10px;
-                font-size: 12px;
-                padding: 6px 12px;
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
             
-            .header-content {
-                flex-wrap: wrap;
+            .image-grid-container {
+                padding: 30px 15px;
             }
             
-            .logo {
+            .placeholder-text {
                 font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .image-grid-container {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -284,10 +344,43 @@
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-    <!-- Demo Content -->
-    <div style="padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-        <h1 style="margin-bottom: 20px;">Welcome to Telfar</h1>
-        <p style="color: #666; line-height: 1.6;">This is a demo of the header navigation. Click the menu button to see the collapsible menu, or the cart icon to simulate cart functionality.</p>
+    <!-- Image Grid Section -->
+    <div class="image-grid-container">
+        <div class="image-grid">
+            <!-- First Row -->
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 1</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 2</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 3</span>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 4</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 5</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 6</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -340,6 +433,19 @@
             if (event.key === 'Escape') {
                 closeMenu();
             }
+        });
+
+        // Image frame functionality
+        function handleImageClick(frameNumber) {
+            alert(`Image frame ${frameNumber} clicked! You can add navigation or modal functionality here.`);
+        }
+
+        // Add click handlers to image frames
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageFrames = document.querySelectorAll('.image-frame');
+            imageFrames.forEach((frame, index) => {
+                frame.addEventListener('click', () => handleImageClick(index + 1));
+            });
         });
     </script>
 </body>
