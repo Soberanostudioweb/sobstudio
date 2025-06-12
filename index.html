@@ -3,12 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telfar Header</title>
+    <title>SOBERANO STUDIO</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #f8f8f8;
+            padding: 60px 20px 40px;
+            margin-top: 80px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #333;
+        }
+
+        /* Newsletter Section */
+        .newsletter-column {
+            text-align: center;
+        }
+
+        .newsletter-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-right: none;
+            font-size: 14px;
+            outline: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .email-input:focus {
+            border-color: #333;
+        }
+
+        .subscribe-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #555;
+        }
+
+        .terms-text {
+            font-size: 11px;
+            color: #888;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .terms-link {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .terms-link:hover {
+            color: #555;
+        }
+
+        .sms-info {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .sms-info p {
+            font-size: 13px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Footer Responsive */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .footer {
+                padding: 40px 20px 30px;
+                margin-top: 60px;
+            }
+            
+            .newsletter-form {
+                max-width: 100%;
+            }
+            
+            .terms-text, .sms-info {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 30px 15px 20px;
+            }
+            
+            .footer-content {
+                gap: 30px;
+            }
+            
+            .footer-title {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
         }
 
         body {
@@ -282,16 +455,16 @@
         <div class="header-content">
             <!-- Logo -->
             <div class="logo">
-                <div class="logo-icon">T</div>
+                <div class="logo-icon">S</div>
                 <div>
-                    <div style="font-weight: bold;">TELFAR</div>
-                    <div style="font-size: 12px; color: #666;">EST. 2005, NYC</div>
+                    <div style="font-weight: bold;">SOBERANO STUDIO</div>
+                    <div style="font-size: 12px; color: #666;">EST. 2025, Cartagena de Indias</div>
                 </div>
             </div>
 
             <!-- Promo Banner -->
             <div class="promo-banner" id="promoBanner">
-                $20 Off Wallets With Bag Purchase
+                20% de descuento en compra de 2 juegos de mesa o más
                 <span class="close-btn" onclick="closeBanner()">&times;</span>
             </div>
 
@@ -302,7 +475,7 @@
                     <svg class="cart-icon" viewBox="0 0 24 24">
                         <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v8a2 2 0 01-2 2H9a2 2 0 01-2-2v-8m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"/>
                     </svg>
-                    <div class="cart-badge">2</div>
+                    <div class="cart-badge">0</div>
                 </button>
 
                 <!-- Menu Toggle -->
@@ -321,23 +494,21 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
             <div class="logo">
-                <div class="logo-icon">T</div>
+                <div class="logo-icon">S</div>
                 <div>
-                    <div style="font-weight: bold;">TELFAR</div>
-                    <div style="font-size: 12px; color: #666;">EST. 2005, NYC</div>
+                    <div style="font-weight: bold;">SOBERANO STUDIO</div>
+                    <div style="font-size: 12px; color: #666;">EST. 2025, Cartagena de Indias</div>
                 </div>
             </div>
             <button class="menu-close" onclick="toggleMenu()">&times;</button>
         </div>
         
         <ul class="menu-items">
-            <li><a href="#" onclick="navigateTo('bags')">Shopping Bags</a></li>
-            <li><a href="#" onclick="navigateTo('duffle')">Duffle Bags</a></li>
-            <li><a href="#" onclick="navigateTo('jelly')">Jelly Shoppers + Slides</a></li>
-            <li><a href="#" onclick="navigateTo('circle')">Circle Bags</a></li>
-            <li><a href="#" onclick="navigateTo('carry')">The Carry Bag</a></li>
-            <li><a href="#" onclick="navigateTo('polo')">New: Polo + Workwear Apparel</a></li>
-            <li><a href="#" onclick="navigateTo('track')">New: Telfar Track Apparel</a></li>
+            <li><a href="#" onclick="navigateTo('bags')">Portavasos</a></li>
+            <li><a href="#" onclick="navigateTo('duffle')">Bandejas</a></li>
+            <li><a href="#" onclick="navigateTo('jelly')">Portacopas/a></li>
+            <li><a href="#" onclick="navigateTo('circle')">Juegos de mesa</a></li>
+            <li><a href="#" onclick="navigateTo('carry')">Decoración</a></li>
         </ul>
     </div>
 
@@ -383,6 +554,59 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Help Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">AYUDA</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Solicita Retorno</a></li>
+                    <li><a href="#">Seguimiento de Envio</a></li>
+                    <li><a href="#">Contactenos</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-column newsletter-column">
+                <h3 class="footer-title">STAY IN THE KNOW</h3>
+                <p class="newsletter-text">Be the first to discover new drops, special offers, and all things SKIMS</p>
+                
+                <div class="newsletter-form">
+                    <input type="email" class="email-input" placeholder="tu email" id="emailInput">
+                    <button class="subscribe-btn" onclick="handleSubscribe()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <p class="terms-text">
+                    Al ingresar su email aqui usted acepta recibir mensajes de marketing recurrentes por parte de SOBERANOSTUDIO
+                    y acepta los terminos y condiciones de SOBERANOSTUDIO. 
+                    View <a href="#" class="terms-link">Terminos</a> & <a href="#" class="terms-link">Privacidad</a>
+                </p>
+                
+                <div class="sms-info">
+                    
+                </div>
+            </div>
+
+            <!-- Más Info Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">MAS INFO</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Acerca de Nosotros</a></li>
+                    <li><a href="#">Procesos de resinado</a></li>
+                    <li><a href="#">Calidades </a></li>
+                    <li><a href="#">Politica de devolución</a></li>
+                    <li><a href="#">Pedidos Costumizados</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Menu functionality
         function toggleMenu() {
@@ -425,6 +649,42 @@
             
             if (!menu.contains(event.target) && !menuButton) {
                 closeMenu();
+            }
+        });
+
+        // Newsletter subscription functionality
+        function handleSubscribe() {
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            alert(`Thank you for subscribing with ${email}!`);
+            emailInput.value = '';
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Allow Enter key to submit newsletter
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('emailInput');
+            if (emailInput) {
+                emailInput.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        handleSubscribe();
+                    }
+                });
             }
         });
 
