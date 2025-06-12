@@ -1,122 +1,452 @@
-<!DOCTYPE HTML>
-<!--
-	Parallelism by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Soberano Studio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telfar Header</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
 
-				<!-- Main -->
-					<section id="main">
+        .header {
+            background-color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
 
-						<!-- Items -->
-							<div class="items">
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-								<div class="item intro span-2">
-									<h1>Soberano Studio</h1>
-									<p>Bienvenido a nuestra tienda<br />
-									Lo invitamos a conocer nuestras colecciones</p>
-								</div>
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: black;
+        }
 
-								<article class="item thumb span-1">
-									<h2>You really got me</h2>
-									<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
-								</article>
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background-color: black;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-								<article class="item thumb span-2">
-									<h2>Ad Infinitum</h2>
-									<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a>
-								</article>
+        .promo-banner {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff4444;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-								<article class="item thumb span-1">
-									<h2>Different.</h2>
-									<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a>
-								</article>
+        .promo-banner:hover {
+            background-color: #e63939;
+        }
 
-								<article class="item thumb span-1">
-									<h2>Elysium</h2>
-									<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a>
-								</article>
+        .promo-banner .close-btn {
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 0 5px;
+        }
 
-								<article class="item thumb span-3">
-									<h2>Kingdom of the Wind</h2>
-									<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a>
-								</article>
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-								<article class="item thumb span-1">
-									<h2>The Pursuit</h2>
-									<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a>
-								</article>
+        .icon-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
 
-								<article class="item thumb span-2">
-									<h2>Boundless</h2>
-									<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a>
-								</article>
+        .icon-button:hover {
+            background-color: #f0f0f0;
+        }
 
-								<article class="item thumb span-2">
-									<h2>The Spectators</h2>
-									<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
-								</article>
+        .cart-icon, .menu-icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
 
-							</div>
+        .cart-badge {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background-color: #ff4444;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
 
-						<!-- Items -->
-							<div class="items">
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            padding: 20px;
+        }
 
-								<article class="item thumb span-3"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Boundless</h2><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>The Spectators</h2><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>You really got me</h2><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Ad Infinitum</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>Different.</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-								<article class="item thumb span-1"><h2>Elysium</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
+        .mobile-menu.open {
+            right: 0;
+        }
 
-							</div>
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
 
-					</section>
+        .menu-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
 
-				<!-- Footer -->
-					<section id="footer">
-						<section>
-							<p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>. Free for personal
-							and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
-						</section>
-						<section>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</section>
-					</section>
+        .menu-items {
+            list-style: none;
+        }
 
-			</div>
+        .menu-items li {
+            margin-bottom: 20px;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .menu-items a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-	</body>
+        .menu-items a:hover {
+            color: #ff4444;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Image Grid Styles */
+        .image-grid-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .image-frame {
+            aspect-ratio: 1;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+            position: relative;
+        }
+
+        .placeholder-text {
+            color: #999;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* When images are added */
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive Design for Image Grid */
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .image-grid-container {
+                padding: 30px 15px;
+            }
+            
+            .placeholder-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .image-grid-container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">T</div>
+                <div>
+                    <div style="font-weight: bold;">TELFAR</div>
+                    <div style="font-size: 12px; color: #666;">EST. 2005, NYC</div>
+                </div>
+            </div>
+
+            <!-- Promo Banner -->
+            <div class="promo-banner" id="promoBanner">
+                $20 Off Wallets With Bag Purchase
+                <span class="close-btn" onclick="closeBanner()">&times;</span>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Shopping Cart -->
+                <button class="icon-button" onclick="toggleCart()">
+                    <svg class="cart-icon" viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v8a2 2 0 01-2 2H9a2 2 0 01-2-2v-8m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"/>
+                    </svg>
+                    <div class="cart-badge">2</div>
+                </button>
+
+                <!-- Menu Toggle -->
+                <button class="icon-button" onclick="toggleMenu()">
+                    <svg class="menu-icon" viewBox="0 0 24 24">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-icon">T</div>
+                <div>
+                    <div style="font-weight: bold;">TELFAR</div>
+                    <div style="font-size: 12px; color: #666;">EST. 2005, NYC</div>
+                </div>
+            </div>
+            <button class="menu-close" onclick="toggleMenu()">&times;</button>
+        </div>
+        
+        <ul class="menu-items">
+            <li><a href="#" onclick="navigateTo('bags')">Shopping Bags</a></li>
+            <li><a href="#" onclick="navigateTo('duffle')">Duffle Bags</a></li>
+            <li><a href="#" onclick="navigateTo('jelly')">Jelly Shoppers + Slides</a></li>
+            <li><a href="#" onclick="navigateTo('circle')">Circle Bags</a></li>
+            <li><a href="#" onclick="navigateTo('carry')">The Carry Bag</a></li>
+            <li><a href="#" onclick="navigateTo('polo')">New: Polo + Workwear Apparel</a></li>
+            <li><a href="#" onclick="navigateTo('track')">New: Telfar Track Apparel</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <!-- Image Grid Section -->
+    <div class="image-grid-container">
+        <div class="image-grid">
+            <!-- First Row -->
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 1</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 2</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 3</span>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 4</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 5</span>
+                </div>
+            </div>
+            <div class="image-frame">
+                <div class="image-placeholder">
+                    <span class="placeholder-text">Image 6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            
+            menu.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            
+            menu.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        // Cart functionality
+        function toggleCart() {
+            alert('Cart functionality would be implemented here!');
+        }
+
+        // Navigation
+        function navigateTo(section) {
+            alert(`Navigating to ${section} section...`);
+            closeMenu();
+        }
+
+        // Close promo banner
+        function closeBanner() {
+            const banner = document.getElementById('promoBanner');
+            banner.style.display = 'none';
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const menuButton = event.target.closest('.icon-button');
+            
+            if (!menu.contains(event.target) && !menuButton) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        // Image frame functionality
+        function handleImageClick(frameNumber) {
+            alert(`Image frame ${frameNumber} clicked! You can add navigation or modal functionality here.`);
+        }
+
+        // Add click handlers to image frames
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageFrames = document.querySelectorAll('.image-frame');
+            imageFrames.forEach((frame, index) => {
+                frame.addEventListener('click', () => handleImageClick(index + 1));
+            });
+        });
+    </script>
+</body>
 </html>
